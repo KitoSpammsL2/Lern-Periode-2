@@ -1,177 +1,102 @@
-﻿using System.ComponentModel.Design;
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.ComponentModel.Design;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
 
-namespace RandomNuber
+namespace Hangman
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            
-            double grad; 
+            string[] words = { "Baum", "Fluss", "Wüste", "Sonnenaufgang", "Regenbogen", "Felsen", "Dschungel", "Pinguin", "Elefant",
+                "Krokodil",   "Libelle", "Ameise", "Eichhörnchen", "Albatros", "Koralle", "Seestern", "Tintenfisch", "Giraffe", "Architekt",
+                "Mechaniker", "Ingenieur", "Journalist", "Lehrer", "Bäcker", "Anwalt", "Krankenpfleger", "Elektriker", "Künstler", 
+                "Feuerwehrmann", "Pilot", "Gärtner", "Wissenschaftler", "Förster", "Designer", "Zahnarzt", "Pizza", "Nudel", 
+                "Schokolade", "Eiscreme", "Avocado", "Karotte", "Limonade", "Käse", "Apfelkuchen", "Pfannkuchen", "Marmelade",
+                "Joghurt", "Wassermelone", "Sandwich", "Paprika", "Keks", "Honig", "Gummibärchen", "Deutschland", "Italien",
+                "Spanien", "Frankreich", "Kanada", "Ägypten", "Griechenland", "Norwegen", "Schweden", "China", "Brasilien",
+                "Australien", "Marokko", "Venedig", "Madrid", "Sydney", "Rio de Janeiro", "Hamburg", "Mikroskop", "Teleskop",
+                "Galaxie", "Elektrizität", "Roboter", "Computer", "Tablet", "Satellit", "Drohne", "Rakete", "Atome", "Algorithmus",
+                "Speicherchip", "Internet", "Geometrie", "Energie", "Akku", "Software", "Gitarre", "Orchester", "Melodie", "Pinsel",
+                "Symphonie", "Trompete", "Skulptur", "Oper", "Ballett", "Klavier", "Theater", "Leinwand", "Palette", "Note",
+                "Dirigent", "Mosaik", "Collage", "Rhythmus", "Drache", "Zauberer", "Phönix", "Elfe", "Einhorn", "Kobold",
+                "Talisman", "Fluch", "Feenstaub", "Magie", "Sirene", "Pegasus", "Riese", "Schwert", "Kristall", "Alchemist",
+                "Hexenkessel", "Unsterblichkeit", "Regen", "Geburtstag", "Abenteuer", "Freundschaft", "Rätsel", "Mysterium",
+                "Karussell", "Sternenhimmel", "Brücke", "Glücksbringer", "Kaktus", "Bücherregal", "Parfüm", "Überraschung",
+                "Fernweh", "Herbstblätter", "Märchen"};
 
-            while (true) 
+            int life = 9;
+            int lifenow = life;   
+            bool win = false;
+         
+            Random random = new Random();
+            int randomword = random.Next(0, words.Length);
+            string word = words[randomword];
+
+            string striche = new string('-', word.Length);
+
+           
+
+            while(lifenow  > 0 && !win)
             {
-                Console.WriteLine("Was willst du für einen schwirigkeitsgrad?");
-                Console.WriteLine("Leicht(1) = Zahl: 1-100  Versuche: 10");
-                Console.WriteLine("Normal(2) = Zahl: 1-500  Versuche: 10");
-                Console.WriteLine("Schwer(3) = Zahl: 1-1000 Versuche: 10");
-                string eingabe = Console.ReadLine();
+
+                Console.WriteLine("Das Wort für das Hangman: " + striche );
+            
+              List<char> buchstbeversuch = new List<char>();
 
 
-                if (Double.TryParse(eingabe, out grad) && (grad == 1.0 || grad == 2.0 || grad == 3.0))
+
+                Console.WriteLine("Errahten Sie einen Buchstaben: ");
+                Console.WriteLine($"Du hasst noch {lifenow} leben");
+
+                char guess = Convert.ToChar(Console.ReadLine());    
+                
+                if(word.Contains(guess) && !buchstbeversuch.Contains(guess))
                 {
-                    break;
+                    Console.WriteLine("Correct");
                 }
                 else
                 {
-                    Console.WriteLine("Fehlerhafte Eingabe!");
+                    Console.WriteLine("Incorrect");
+                    lifenow--;
                 }
+                buchstbeversuch.Add(guess);
+
+                bool wordfertig = false;
+
+                foreach(char c in word)
+                    if(buchstbeversuch.Contains(c))
+                        wordfertig = true;
+                win = wordfertig;                                 
             }
-           
-            string guess;
-            int input;
 
-            if (grad == 1)
+            if(win)
             {
-                Random random = new Random();
-                int glückszahl = random.Next(1, 100);
- 
-                while (true)
-                {
-
-                    while (true)
-                    {
-                        Console.Write("Raten Sie von 1-100: ");
-                        guess = Console.ReadLine();
-                        input = Convert.ToInt32(guess);
-
-                        if (input <= 100 && input >= 1 )
-                        {
-                            break;
-                            
-                        }
-                        else  
-                        {
-                            Console.WriteLine("Ungültige Eingabe");
-
-                        }
-                      
-                    }
-                                   
-                    if (glückszahl < input)
-                    {
-                        Console.WriteLine("Deine Zahl ist zu gross!");
-
-                    }
-
-                    if (glückszahl == input)
-                    {
-                        Console.WriteLine("Du hasst gewonnen");
-                        break;
-                    }
-
-
-                    else
-                    {
-                        Console.WriteLine("Deine Zahl ist zu klein");
-                    }
-                }    
+                Console.WriteLine("GLückwunsch, du hasst gewonnen!!");
             }
-              
-            if (grad == 2)
-            {
-                Random random = new Random();
-                int glückszahl = random.Next(1, 500);
-              
-
-                while (true)
-                {
-
-                    while (true)
-                    {
-                        Console.Write("Raten Sie von 1-100: ");
-                        guess = Console.ReadLine();
-                        input = Convert.ToInt32(guess);
-                        if (input <= 500 && input >= 1)
-                        {
-                            break;
-
-                        }
-                        else
-                        {
-                            Console.WriteLine("Ungültige Eingabe");
-
-                        }
-
-                    }
-
-                    if (glückszahl < input)
-                    {
-                        Console.WriteLine("Deine Zahl ist zu gross!");
-
-                    }
-
-                    if (glückszahl == input)
-                    {
-                        Console.WriteLine("Du hasst gewonnen");
-                        break;
-                    }
+            else
+                Console.WriteLine("Du hasst verloren:(");
 
 
-                    else
-                    {
-                        Console.WriteLine("Deine Zahl ist zu klein");
-                    }
-                }
-            }
-            
-            if (grad == 3)
-            {
-                Random random = new Random();
-                int glückszahl = random.Next(1, 1000);
-              
-
-                while (true)
-                {
-
-                    while (true)
-                    {
-                        Console.Write("Raten Sie von 1-100: ");
-                        guess = Console.ReadLine();
-                        input = Convert.ToInt32(guess);
-                        if (input <= 1000 && input >= 1)
-                        {
-                            break;
-
-                        }
-                        else
-                        {
-                            Console.WriteLine("Ungültige Eingabe");
-
-                        }
-
-                    }
-
-                    if (glückszahl < input)
-                    {
-                        Console.WriteLine("Deine Zahl ist zu gross!");
-
-                    }
-
-                    if (glückszahl == input)
-                    {
-                        Console.WriteLine("Du hasst gewonnen");
-                        break;
-                    }
 
 
-                    else
-                    {
-                        Console.WriteLine("Deine Zahl ist zu klein");
-                    }
-                }
-            }       
- //  > <
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
         }
     }
 }
