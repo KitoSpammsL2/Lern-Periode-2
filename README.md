@@ -23,16 +23,29 @@ Was wäre ein geeignetes Projekt für diese LP2?
 
 Das ist das erste Projekt, bei dem ich mir vorstellen kann, dass es nicht wie eine Aufgabe ist, sondern etwas, das ich wirklich will. Ich habe vor, vielleicht in mehreren Lernperioden ein ganzes Kasino zu erstellen, in dem man von Spiel zu Spiel wechseln kann, wie Blackjack, Roulette und einarmiger Bandit, und dabei immer sein Kapital behält. 
 
-##1.11.2024
-- [ ] Die Spielregeln sorgfältig anschauen, um sicherzustellen, dass ich nichts Falsches programmiere.
-- [ ] Die Karten an den Spieler austeilen.
-- [ ] Die Karten für den Dealer austeilen.
-- [ ] Die Möglichkeit bieten, eine weitere Karte aufzunehmen.
+##8.11.2024
+- [x] Die Spielregeln sorgfältig anschauen, um sicherzustellen, dass ich nichts Falsches programmiere.
+- [x] Die Karten an den Spieler austeilen.
+- [x] Die Karten für den Dealer austeilen.
+- [x] Die Möglichkeit bieten, eine weitere Karte aufzunehmen.
   
 
+Ich bin sehr zufrieden mite da alles funktieoniert hat wie ich es mir vorgestellt habe. Ich bekomme meine Karten und ich kann noch eine Karte aufziehen, wenn ich es möchte. Der Dealer funktieoniert auch schon ein wenig abr bei ihm muss ich noch einwenig anpassen.
 
 
+##15.11.24
 
+- [ ] Der Dealer zieht eine weitere Karte, wenn er weniger als 17 Punkte hat.
+- [ ] Der Spieler verliert, wenn der Dealer näher an 21 Punkten ist.
+- [ ] Doppelte Karten vermeiden (mit einer List).
+- [ ] Wenn der Spieler über 21 Punkte erreicht, verliert er.
+      
+ 
+
+Ich bin sehr zufrieden, da alles funktioniert hat, wie ich es mir vorgestellt habe. Ich bekomme meine Karten und kann eine weitere Karte ziehen, wenn ich möchte. Der Dealer funktioniert auch schon ein wenig, aber bei ihm muss ich noch ein wenig anpassen.
+
+
+ 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
 
