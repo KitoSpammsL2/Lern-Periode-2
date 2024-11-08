@@ -21,8 +21,6 @@ Was wäre ein geeignetes Projekt für diese LP2?
 
 ✍Heute habe ich mit den ersten drei Arbeitspaketen für das Hangman-Spiel angefangen. Allerdings hat es mir nicht so viel Spass gemacht, und plötzlich kam mir die Idee, ein Blackjack-Spiel zu entwickeln. Bis jetzt habe ich nur ein Array für die Karten und Werte erstellt.
 
-Das ist das erste Projekt, bei dem ich mir vorstellen kann, dass es nicht wie eine Aufgabe ist, sondern etwas, das ich wirklich will. Ich habe vor, vielleicht in mehreren Lernperioden ein ganzes Kasino zu erstellen, in dem man von Spiel zu Spiel wechseln kann, wie Blackjack, Roulette und einarmiger Bandit, und dabei immer sein Kapital behält. 
-
 ##8.11.2024
 - [x] Die Spielregeln sorgfältig anschauen, um sicherzustellen, dass ich nichts Falsches programmiere.
 - [x] Die Karten an den Spieler austeilen.
