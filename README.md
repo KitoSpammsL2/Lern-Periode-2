@@ -11,13 +11,6 @@ Was wäre ein geeignetes Projekt für diese LP2?
       
 ✍️ Heute habe ich einen Rabdom Number GUesser programmiert. Leider bin ich mit dem Code nicht ganz zufrieden, da ich ihn statt mit switch-case mit if-else Anweisungen schreiben musste, weil switch-case irgendwie nicht funktioniert hat. Ausserdem gibt es eine Stelle im Programm, bei der das Programm abstürzt, wenn man einen Buchstaben statt einer Zahl eingibt. Ansonsten funktioniert das Spiel aber so, wie ich es mir vorgestellt habe. Ein grösseres Projekt habe ich noch nicht gefunden, an dem ich arbeiten könnte. Ich bin noch dabei, den Number Guesser zu verbessern.
 
-☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
-
-##1.11.2024
-- [ ] Number Guesser nicht zum Abstürzen zu bringen.
-- [x] Neues Projekt finden
-- [ ] Viertes AP
-      
 
 ✍Heute habe ich mit den ersten drei Arbeitspaketen für das Hangman-Spiel angefangen. Allerdings hat es mir nicht so viel Spass gemacht, und plötzlich kam mir die Idee, ein Blackjack-Spiel zu entwickeln. Bis jetzt habe ich nur ein Array für die Karten und Werte erstellt.
 
@@ -28,7 +21,7 @@ Was wäre ein geeignetes Projekt für diese LP2?
 - [x] Die Möglichkeit bieten, eine weitere Karte aufzunehmen.
   
 
-Ich bin sehr zufrieden mite da alles funktieoniert hat wie ich es mir vorgestellt habe. Ich bekomme meine Karten und ich kann noch eine Karte aufziehen, wenn ich es möchte. Der Dealer funktieoniert auch schon ein wenig abr bei ihm muss ich noch einwenig anpassen.
+Ich bin sehr zufrieden, da alles funktioniert hat, wie ich es mir vorgestellt habe. Ich bekomme meine Karten und kann eine weitere Karte ziehen, wenn ich möchte. Der Dealer funktioniert auch schon ein wenig, aber bei ihm muss ich noch ein wenig anpassen.
 
 
 ##15.11.24
@@ -39,8 +32,6 @@ Ich bin sehr zufrieden mite da alles funktieoniert hat wie ich es mir vorgestell
 - [ ] Wenn der Spieler über 21 Punkte erreicht, verliert er.
       
  
-
-Ich bin sehr zufrieden, da alles funktioniert hat, wie ich es mir vorgestellt habe. Ich bekomme meine Karten und kann eine weitere Karte ziehen, wenn ich möchte. Der Dealer funktioniert auch schon ein wenig, aber bei ihm muss ich noch ein wenig anpassen.
 
 
  
