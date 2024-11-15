@@ -1,102 +1,101 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
+﻿using System;
 
-namespace Hangman
+namespace BlackJack1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string[] words = { "Baum", "Fluss", "Wüste", "Sonnenaufgang", "Regenbogen", "Felsen", "Dschungel", "Pinguin", "Elefant",
-                "Krokodil",   "Libelle", "Ameise", "Eichhörnchen", "Albatros", "Koralle", "Seestern", "Tintenfisch", "Giraffe", "Architekt",
-                "Mechaniker", "Ingenieur", "Journalist", "Lehrer", "Bäcker", "Anwalt", "Krankenpfleger", "Elektriker", "Künstler", 
-                "Feuerwehrmann", "Pilot", "Gärtner", "Wissenschaftler", "Förster", "Designer", "Zahnarzt", "Pizza", "Nudel", 
-                "Schokolade", "Eiscreme", "Avocado", "Karotte", "Limonade", "Käse", "Apfelkuchen", "Pfannkuchen", "Marmelade",
-                "Joghurt", "Wassermelone", "Sandwich", "Paprika", "Keks", "Honig", "Gummibärchen", "Deutschland", "Italien",
-                "Spanien", "Frankreich", "Kanada", "Ägypten", "Griechenland", "Norwegen", "Schweden", "China", "Brasilien",
-                "Australien", "Marokko", "Venedig", "Madrid", "Sydney", "Rio de Janeiro", "Hamburg", "Mikroskop", "Teleskop",
-                "Galaxie", "Elektrizität", "Roboter", "Computer", "Tablet", "Satellit", "Drohne", "Rakete", "Atome", "Algorithmus",
-                "Speicherchip", "Internet", "Geometrie", "Energie", "Akku", "Software", "Gitarre", "Orchester", "Melodie", "Pinsel",
-                "Symphonie", "Trompete", "Skulptur", "Oper", "Ballett", "Klavier", "Theater", "Leinwand", "Palette", "Note",
-                "Dirigent", "Mosaik", "Collage", "Rhythmus", "Drache", "Zauberer", "Phönix", "Elfe", "Einhorn", "Kobold",
-                "Talisman", "Fluch", "Feenstaub", "Magie", "Sirene", "Pegasus", "Riese", "Schwert", "Kristall", "Alchemist",
-                "Hexenkessel", "Unsterblichkeit", "Regen", "Geburtstag", "Abenteuer", "Freundschaft", "Rätsel", "Mysterium",
-                "Karussell", "Sternenhimmel", "Brücke", "Glücksbringer", "Kaktus", "Bücherregal", "Parfüm", "Überraschung",
-                "Fernweh", "Herbstblätter", "Märchen"};
-
-            int life = 9;
-            int lifenow = life;   
-            bool win = false;
-         
-            Random random = new Random();
-            int randomword = random.Next(0, words.Length);
-            string word = words[randomword];
-
-            string striche = new string('-', word.Length);
-
-           
-
-            while(lifenow  > 0 && !win)
+            string[,] cards = new string[4, 13]
             {
+                { "As ♥,11", "2 ♥,2", "3 ♥,3", "4 ♥,4", "5 ♥,5", "6 ♥,6", "7 ♥,7", "8 ♥,8", "9 ♥,9", "10 ♥,10", "J ♥,10", "Q ♥,10", "K ♥,10" },
+                { "As ♦,11", "2 ♦,2", "3 ♦,3", "4 ♦,4", "5 ♦,5", "6 ♦,6", "7 ♦,7", "8 ♦,8", "9 ♦,9", "10 ♦,10", "J ♦,10", "Q ♦,10", "K ♦,10" },
+                { "As ♠,11", "2 ♠,2", "3 ♠,3", "4 ♠,4", "5 ♠,5", "6 ♠,6", "7 ♠,7", "8 ♠,8", "9 ♠,9", "10 ♠,10", "J ♠,10", "Q ♠,10", "K ♠,10" },
+                { "As ♣,11", "2 ♣,2", "3 ♣,3", "4 ♣,4", "5 ♣,5", "6 ♣,6", "7 ♣,7", "8 ♣,8", "9 ♣,9", "10 ♣,10", "J ♣,10", "Q ♣,10", "K ♣,10" }
+            };
 
-                Console.WriteLine("Das Wort für das Hangman: " + striche );
+            Random random = new Random();
+
+            int playerValue = 0;
+            int dealerValue = 0;
+
             
-              List<char> buchstbeversuch = new List<char>();
+            dealerValue += ZieheKarte(cards, random, "Dealer");
+            dealerValue += ZieheKarte(cards, random, "Dealer");
 
 
+            while (dealerValue < 17)
+            {
+                dealerValue += ZieheKarte(cards, random, "Dealer");
+            }
 
-                Console.WriteLine("Errahten Sie einen Buchstaben: ");
-                Console.WriteLine($"Du hasst noch {lifenow} leben");
+            Console.WriteLine($"Dealer hat einen Wert von: {dealerValue}");
+            Console.WriteLine();
 
-                char guess = Convert.ToChar(Console.ReadLine());    
-                
-                if(word.Contains(guess) && !buchstbeversuch.Contains(guess))
+
+            playerValue += ZieheKarte(cards, random, "Spieler");
+            playerValue += ZieheKarte(cards, random, "Spieler");
+
+
+            while (true)
+            {
+                Console.WriteLine("Möchtest du noch eine Karte aufziehen? (j/n)");
+                string eingabe = Console.ReadLine();
+
+                if (eingabe.ToLower() == "j")
                 {
-                    Console.WriteLine("Correct");
+                    playerValue += ZieheKarte(cards, random, "Spieler");
+
+                    if (playerValue > 21)
+                    {
+                        Console.WriteLine("Du hast dich überkauft! Dein Wert ist über 21.");
+                        Console.WriteLine("Du hast verloren!");
+                        return;
+                    }
+                }
+                else if (eingabe.ToLower() == "n")
+                {
+                    break;
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect");
-                    lifenow--;
+                    Console.WriteLine("Ungültige Eingabe. Bitte 'j' oder 'n' eingeben.");
                 }
-                buchstbeversuch.Add(guess);
-
-                bool wordfertig = false;
-
-                foreach(char c in word)
-                    if(buchstbeversuch.Contains(c))
-                        wordfertig = true;
-                win = wordfertig;                                 
             }
 
-            if(win)
+            Console.WriteLine($"Dein Kartenwert ist: {playerValue}");
+
+
+            if (playerValue > 21)
             {
-                Console.WriteLine("GLückwunsch, du hasst gewonnen!!");
+                Console.WriteLine("Du hast dich überkauft! Du verlierst.");
+            }
+            else if (dealerValue > 21 || playerValue > dealerValue)
+            {
+                Console.WriteLine("Herzlichen Glückwunsch! Du hast gewonnen!");
+            }
+            else if (playerValue == dealerValue)
+            {
+                Console.WriteLine("Unentschieden! Niemand gewinnt.");
             }
             else
-                Console.WriteLine("Du hasst verloren:(");
+            {
+                Console.WriteLine("Der Dealer hat gewonnen. Besseres Glück nächstes Mal!");
+            }
+        }
 
+        static int ZieheKarte(string[,] cards, Random random, string spielerName)
+        {
+            int zeichen = random.Next(0, 4);
+            int cardIndex = random.Next(0, 13);
 
+            string gezogeneKarte = cards[zeichen, cardIndex];
+            string[] cardParts = gezogeneKarte.Split(',');
+            string cardName = cardParts[0];
+            int cardValue = int.Parse(cardParts[1]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
+            Console.WriteLine($"{spielerName} zieht: {cardName}, Wert: {cardValue}");
+            return cardValue;
         }
     }
 }
