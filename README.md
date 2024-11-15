@@ -26,12 +26,23 @@ Ich bin sehr zufrieden, da alles funktioniert hat, wie ich es mir vorgestellt ha
 
 ##15.11.24
 
-- [ ] Der Dealer zieht eine weitere Karte, wenn er weniger als 17 Punkte hat.
-- [ ] Der Spieler verliert, wenn der Dealer näher an 21 Punkten ist.
-- [ ] Doppelte Karten vermeiden (mit einer List).
-- [ ] Wenn der Spieler über 21 Punkte erreicht, verliert er.
-      
- 
+- [x] Der Dealer zieht eine weitere Karte, wenn er weniger als 17 Punkte hat.
+- [x] Der Spieler verliert, wenn der Dealer näher an 21 Punkten ist.
+- [x] Eine Funktion schreiben für das Karten ziehen.
+- [x] Wenn der Spieler über 21 Punkte erreicht, verliert er.
+
+
+Ich musste das ganze Programm neu schreiben, weil ich gemerkt habe, dass ich zu oft Karten gezogen habe und das Programm dadurch unübersichtlich und zu groß geworden ist. Deshalb habe ich eine Funktion gemacht, die das Kartenziehen übernimmt. Da ich nicht mehr wusste, wie das geht, musste ich es nachschauen, was etwas Zeit gekostet hat. Außerdem habe ich eine Funktion hinzugefügt, mit der man gewinnen oder verlieren kann. Jetzt ist das Programm viel einfacher und klarer.
+
+
+ ##23.11.24
+- [ ] Ein System für Geld machen.
+     - [ ] Initialisierung des Guthabens
+     - [ ] Einsatz festlegen
+     - [ ] Gewinn/Verlust berechnen
+     - [ ] Spiel beenden bei Bankrott
+- [ ] Die Option geben eine weitere runde zu spielen.
+- [ ] Eine Liste machen für keine doppelte Karte.
 
 
  
