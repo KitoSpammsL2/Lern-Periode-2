@@ -43,9 +43,16 @@ Ich musste das ganze Programm neu schreiben, weil ich gemerkt habe, dass ich zu 
      - [ ] Spiel beenden bei Bankrott
 - [ ] Die Option geben eine weitere runde zu spielen.
 - [ ] Eine Liste machen für keine doppelte Karte.
+-  
+Das OPL heute hat mir sehr gut gefallen, und alles hat so funktioniert, wie ich es mir vorgestellt hatte. Ich kann jetzt mit Geld arbeiten, und es funktioniert wie geplant. Allerdings gibt es noch ein kleines Problem mit dem Klassenprogramm, das nicht ganz korrekt läuft. 
+
+##29.2.24
+
+Ich möchte ein neues Projekt starten, vermutlich ein weiteres Glücksspiel, da mir die Arbeit daran sehr viel Spass gemacht hat.
 
 
- 
+
+
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
 
