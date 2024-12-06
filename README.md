@@ -73,6 +73,7 @@ Heute habe ich weiter an meinem Projekt "Einarmiger Bandit" gearbeitet und es ne
 - [ ] Highscore
 - [ ] Speichersystem
 - [ ] Andere Symbole machen
+- [ ] AoC machen
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
