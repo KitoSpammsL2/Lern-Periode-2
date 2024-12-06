@@ -1,46 +1,71 @@
-﻿namespace ConsoleApp3
+﻿namespace Hangman2
 {
     internal class Program
     {
         static void Main(string[] args)
-        {          
+        {
+            string[] symbole = { "1", "2", "3", "4", "5" };
+            Random zufall = new Random();
+            int guthaben = 100;
+
+            Console.WriteLine("Willkommen beim Einarmigen Banditen!");
+
+            while (guthaben > 0)
             {
-                string[] symbols = { "1", "2", "3", "4", "5" };
-                Random random = new Random();
-                bool spielen = true;
+                Console.WriteLine($"\nGuthaben: {guthaben}");
 
-                Console.WriteLine("Willkommen beim Einarmigen Banditen!");
-
-                while (spielen)
+                int einsatz = 0;
+                while (einsatz <= 0 || einsatz > guthaben)
                 {
-                    
-                    string reel1 = symbols[random.Next(symbols.Length)];
-                    string reel2 = symbols[random.Next(symbols.Length)];
-                    string reel3 = symbols[random.Next(symbols.Length)];
-
-                    
-                    Console.WriteLine($"| {reel1} | {reel2} | {reel3} |");
-
-                    
-                    if (reel1 == reel2 && reel2 == reel3)
+                    Console.Write($"Einsatz (1 bis {guthaben}): ");
+                    string eingabe = Console.ReadLine();
+                    if (!int.TryParse(eingabe, out einsatz) || einsatz <= 0 || einsatz > guthaben)
                     {
-                        Console.WriteLine("Jackpot! Du hast gewonnen!");
+                        Console.WriteLine("Ungültige Eingabe. Bitte gib eine Zahl im gültigen Bereich ein.");
+                        einsatz = 0;
                     }
-                    else
-                    {
-                        Console.WriteLine("Leider verloren. Versuch's noch einmal!");
-                    }
-
-                   
-                    Console.Write("Noch einmal spielen? (j/n): ");
-                    string input = Console.ReadLine();
-                    spielen = input.ToLower() == "j";
                 }
 
-                Console.WriteLine("Danke fürs Spielen!");
+                string walze1 = symbole[zufall.Next(symbole.Length)];
+                string walze2 = symbole[zufall.Next(symbole.Length)];
+                string walze3 = symbole[zufall.Next(symbole.Length)];
+
+                Console.WriteLine($"\n| {walze1} | {walze2} | {walze3} |");
+
+                int gewinn = BerechneGewinn(walze1, walze2, walze3, einsatz);
+                if (gewinn > 0)
+                {
+                    Console.WriteLine($"Gewinn: {gewinn}");
+                    guthaben += gewinn;
+                }
+                else
+                {
+                    Console.WriteLine("Verloren!");
+                    guthaben -= einsatz;
+                }
+
+                Console.Write("Weiter? (j/n): ");
+                if (Console.ReadLine().ToLower() != "j") break;
             }
+
+            Console.WriteLine("Spiel beendet. Danke fürs Spielen!");
         }
 
+        static int BerechneGewinn(string walze1, string walze2, string walze3, int einsatz)
+        {
+            if (walze1 == walze2 && walze2 == walze3) // Drei gleiche Symbole
+            {
+                return einsatz * int.Parse(walze1) * 10;
+            }
+            else if (walze1 == walze2 || walze2 == walze3 || walze1 == walze3) // Zwei gleiche Symbole
+            {
+                string gleichesSymbol = walze1 == walze2 ? walze1 : (walze2 == walze3 ? walze2 : walze1);
+                return einsatz * int.Parse(gleichesSymbol) * 2;
+            }
+            else // Alle Symbole verschieden
+            {
+                return 0; // Kein Gewinn
+            }
+        }
     }
 }
-
