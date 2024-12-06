@@ -36,13 +36,13 @@ Ich musste das ganze Programm neu schreiben, weil ich gemerkt habe, dass ich zu 
 
 
  ## 23.11.24
-- [ ] Ein System für Geld machen.
-     - [ ] Initialisierung des Guthabens
-     - [ ] Einsatz festlegen
-     - [ ] Gewinn/Verlust berechnen
-     - [ ] Spiel beenden bei Bankrott
-- [ ] Die Option geben eine weitere runde zu spielen.
-- [ ] Eine Liste machen für keine doppelte Karte.
+- [x] Ein System für Geld machen.
+     - [x] Initialisierung des Guthabens
+     - [x] Einsatz festlegen
+     - [x] Gewinn/Verlust berechnen
+     - [x] Spiel beenden bei Bankrott
+- [x] Die Option geben eine weitere runde zu spielen.
+- [x] Eine Liste machen für keine doppelte Karte.
 -  
 Das OPL heute hat mir sehr gut gefallen, und alles hat so funktioniert, wie ich es mir vorgestellt hatte. Ich kann jetzt mit Geld arbeiten, und es funktioniert wie geplant. Allerdings gibt es noch ein kleines Problem mit dem Klassenprogramm, das nicht ganz korrekt läuft. 
 
@@ -50,19 +50,29 @@ Das OPL heute hat mir sehr gut gefallen, und alles hat so funktioniert, wie ich 
 
 Ich möchte ein neues Projekt starten, vermutlich ein weiteres Glücksspiel, da mir die Arbeit daran sehr viel Spass gemacht hat.
 
-Ich habe heute Recharschiert was ich für ein Projekt machen könnte und bin auf den einarmigerbandit gestossen. Danach musste ich schauen wie ich es machen könnte und habe verschiedene sachen ausprobiert. Jetzt habe ich das grund konzept schon mal für den einarmigen bandit und kann über die nächsten wochen verbessern. 
+
+Ich habe heute recherchiert, welches Projekt ich umsetzen könnte, und bin dabei auf den Einarmigen Banditen gestoßen. Anschließend habe ich mich damit beschäftigt, wie ich das Projekt umsetzen könnte, und verschiedene Ansätze ausprobiert. Inzwischen habe ich bereits das Grundkonzept des Einarmigen Banditen entwickelt und kann es in den kommenden Wochen weiter verbessern.
 
 
 
 ## 6.12.24
 
-- [ ] Ein System für Geld machen.
-     - [ ] Initialisierung des Guthabens
-     - [ ] Einsatz festlegen
-     - [ ] Gewinn/Verlust berechnen
-     - [ ] Spiel beenden bei Bankrott
-     - [ ]  Bei verschiedenen Symbolen einen verschiedenen gewinn haben. Z.B. bei 5 mehr Gewinn als bei 1.
-- [ ] Erweiterte Gewinnregeln(Gewinne für 2 gleiche Symbole hinzufügen.)
+- [x] Ein System für Geld machen.
+     - [x] Initialisierung des Guthabens
+     - [x] Einsatz festlegen
+     - [x] Gewinn/Verlust berechnen
+     - [x] Spiel beenden bei Bankrott
+     - [x]  Bei verschiedenen Symbolen einen verschiedenen gewinn haben. Z.B. bei 5 mehr Gewinn als bei 1.
+- [x] Erweiterte Gewinnregeln(Gewinne für 2 gleiche Symbole hinzufügen.)
+
+Heute habe ich weiter an meinem Projekt "Einarmiger Bandit" gearbeitet und es neu geschrieben, da mir die vorherige Version nicht gefallen hat. Obwohl ich ein Video anschauen wollte, habe ich mich entschieden, lieber an meinem Projekt weiterzuarbeiten.
+
+
+## 13.12.24
+
+- [ ] Highscore
+- [ ] Speichersystem
+- [ ] Andere Symbole machen
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
