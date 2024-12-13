@@ -71,9 +71,18 @@ Heute habe ich weiter an meinem Projekt "Einarmiger Bandit" gearbeitet und es ne
 ## 13.12.24
 
 - [ ] Highscore
-- [ ] Speichersystem
-- [ ] Andere Symbole machen
-- [ ] AoC machen
+- [x] Andere Symbole machen
+- [x] AoC machen
+
+      
+Heute habe ich mit dem Advent of Code (AoC) begonnen und mich lange damit beschäftigt. Leider habe ich es nicht geschafft, die Aufgabe zu lösen. Daher bin ich zu meinem Einarmigen Banditen zurückgekehrt und habe daran weitergearbeitet. Das Projekt ist nun abgeschlossen, allerdings sind die Gewinnchancen momentan sehr hoch. Vielleicht sollte ich sie noch etwas anpassen, um das Spiel herausfordernder zu gestalten.
+
+
+## 20.12.24
+
+- [ ] Aoc(diesmal schaff ich es)
+
+
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
 
