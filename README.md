@@ -81,6 +81,7 @@ Heute habe ich mit dem Advent of Code (AoC) begonnen und mich lange damit besch√
 ## 20.12.24
 
 - [ ] Aoc(diesmal schaff ich es)
+- [ ] Zuerst nochmal kurz √ºber den Code schauen ob ich einen Fehler finde und noch ein wenig struckturierter machen.
 
 
 
