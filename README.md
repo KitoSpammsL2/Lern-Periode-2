@@ -81,8 +81,18 @@ Heute habe ich mit dem Advent of Code (AoC) begonnen und mich lange damit besch�
 ## 20.12.24
 
 - [ ] Aoc(diesmal schaff ich es)
-- [ ] Zuerst nochmal kurz über den Code schauen ob ich einen Fehler finde und noch ein wenig struckturierter machen.
+- [x] Zuerst nochmal kurz über den Code schauen ob ich einen Fehler finde und noch ein wenig struckturierter machen.
 
+Heute habe ich zunächst das Programm fertig geschrieben und einige Kleinigkeiten angepasst. Danach habe ich versucht, ein Advent of Code (AoC)-Rätsel zu lösen, es aber leider erneut nicht geschafft. Das hat mich sehr frustriert. Nach dem Call habe ich meinen Code weiter überarbeitet und alle Deklarationen ins Englische übersetzt.
+
+## Reflexion
+
+
+![Screenshot 2024-12-20 104054](https://github.com/user-attachments/assets/912fc099-b94e-4977-b031-c5830d6c9ea6)
+![Screenshot 2024-12-20 102802](https://github.com/user-attachments/assets/7229f1cd-0758-40cd-9ecb-f857485eba97)
+
+
+Diese Lernperiode hat mir viel Spaß gemacht, da ich Programme entwickeln konnte, die mir Freude bereiteten. Zuerst habe ich ein Blackjack-Spiel programmiert und anschließend einen Einarmigen Banditen. Besonders gefallen hat mir, dass wir während dieser Lernperiode viel von zu Hause aus arbeiten konnten. Das hat uns die lange Anreise nach Baden erspart und zeigt, dass unser Lehrer Vertrauen in uns hat. Ich freue mich schon auf die nächste Lernperiode, da wir, wenn ich es richtig verstanden habe, endlich etwas anderes als reine Konsolenanwendungen programmieren werden.
 
 
 ☝️ Vergessen Sie nicht, bis einen ersten Code auf github hochzuladen
